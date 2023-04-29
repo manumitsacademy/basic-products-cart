@@ -1,0 +1,18 @@
+<div class="d-flex">
+    <div class="products">
+        <h1>Products</h1>
+        <div class="products-list">
+            <div class="product" *ngFor="let product of products;let i = index;">
+                <p class="brand">{{product.brand}}</p>
+                <h3>{{product.title}}</h3>
+                <img [src]="product.thumbnail">
+                <h3 class="price">{{product.price|currency}}</h3>
+                <button class="btn" [disabled]="product.isInCart" [ngClass]="{'disabled':product.isInCart}" (click)="addToCart(product,i)">Add to cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="cart">
+        <app-cart [cartItems]="cartProducts" [total]="totalPrice" (incEvent)="incrementCount($event)" (decEvent)="decrementCount($event)"></app-cart>
+        <!-- <app-cart [cartItems]="cartProducts" [total]="totalPrice" [inc]="incrementCount.bind(this)"></app-cart> -->
+    </div>
+</div>

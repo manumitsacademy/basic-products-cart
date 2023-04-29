@@ -1,0 +1,50 @@
+h1,
+h2 {
+    text-align: center;
+}
+
+.cart-items {
+    border-bottom: 2px dashed black;
+}
+
+.cartItem {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    background-color: gold;
+    border-radius: 5px;
+}
+
+h4 {
+    margin: 0;
+}
+
+.count {
+    margin: 0 10px;
+}
+
+.price {
+    margin-left: 30px;
+}
+
+button {
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+.total {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffb703;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.disabled {
+    background-color: grey;
+}

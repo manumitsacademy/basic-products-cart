@@ -1,0 +1,24 @@
+<h1>Cart</h1>
+<h2 *ngIf="!cartItems.length">Your cart is empty</h2>
+<div *ngIf="cartItems.length>0">
+    <div class="cart-items">
+        <div class="cartItem" *ngFor="let cartItem of cartItems">
+            <div>
+                <h4>{{cartItem.title}}</h4>
+            </div>
+            <div>
+                <button [disabled]="cartItem.count<=1" [ngClass]="{'disabled':cartItem.count<=1}" (click)="decCount(cartItem.id)">-</button>
+                <span class="count"><b>{{cartItem.count}}</b></span>
+                <button (click)="incCount(cartItem.id)">+</button>
+                <!-- <button (click)="inc(cartItem.id)">+</button> -->
+            </div>
+            <h4 class="price">{{(cartItem.price*cartItem.count)|currency}}</h4>
+
+        </div>
+
+    </div>
+    <div class="total">
+        <h4>Total:</h4>
+        <h4>{{total|currency}}</h4>
+    </div>
+</div>
